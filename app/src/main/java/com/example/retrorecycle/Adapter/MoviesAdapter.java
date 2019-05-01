@@ -56,7 +56,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         String image_url = IMAGE_URL_BASE_PATH + movies.get(position).getPosterPath();
         Picasso.get()
                 .load(image_url)
-                .placeholder(android.R.drawable.sym_def_app_icon)
                 .placeholder(R.drawable.ic_profile)
                 .error(R.drawable.eror)
                 .into(holder.movieImage);
@@ -65,7 +64,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         holder.movieDescription.setText(movies.get(position).getOverview());
         holder.rating.setText(movies.get(position).getVoteAverage().toString());
 
-       
+
     }
     @Override
     public int getItemCount() {
