@@ -41,6 +41,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             data = (TextView) v.findViewById(R.id.date);
             movieDescription = (TextView) v.findViewById(R.id.description);
             rating = (TextView) v.findViewById(R.id.rating);
+
+
         }
     }
     @Override
@@ -55,12 +57,15 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         Picasso.get()
                 .load(image_url)
                 .placeholder(android.R.drawable.sym_def_app_icon)
-                .error(android.R.drawable.sym_def_app_icon)
+                .placeholder(R.drawable.ic_profile)
+                .error(R.drawable.eror)
                 .into(holder.movieImage);
         holder.movieTitle.setText(movies.get(position).getTitle());
         holder.data.setText(movies.get(position).getReleaseDate());
         holder.movieDescription.setText(movies.get(position).getOverview());
         holder.rating.setText(movies.get(position).getVoteAverage().toString());
+
+       
     }
     @Override
     public int getItemCount() {
